@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolver Questao</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Questoes Certas</h2>
+            <p>Banco de Concursos</p>
+        </div>
+
+        <nav>
+            <ul>
+
+                <li>
+                    <a href="/">Dashboard</a>
+                </li>
+
+                <li class="active">
+                    <a href="/questoes">Questoes</a>
+                </li>
+
+                <li>
+                    <a href="/simulado">Simulados</a>
+                </li>
+
+                <li>
+                    <a href="/estatisticas">Estatisticas</a>
+                </li>
+
+                <li>
+                    <a href="/usuarios">Usuarios</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+        <header>
+            <h1>Resolver Questao</h1>
+        </header>
+
+        <div class="question-container">
+
+            <h3>{{ questao.enunciado }}</h3>
+
+            <div class="tags">
+
+                <span>
+                    {{ questao.nivel_dificuldade }}
+                </span>
+
+            </div>
+
+            <div class="gabarito">
+
+                <h3>Gabarito</h3>
+
+                <p>
+                    {{ questao.gabarito }}
+                </p>
+
+                <h3>Comentario</h3>
+
+                <p>
+                    {{ questao.comentario }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

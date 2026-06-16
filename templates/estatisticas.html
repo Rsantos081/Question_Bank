@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatisticas</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Questoes Certas</h2>
+            <p>Banco de Concursos</p>
+        </div>
+
+        <nav>
+            <ul>
+
+                <li> 
+                  <a href="/">Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="/questoes">Questoes</a>
+                </li>
+
+                <li>
+                   <a href="/simulado">Simulados</a>
+                </li>
+
+                <li class="active">
+                  <a href="/estatisticas">Estatisticas</a>
+                </li>
+
+                <li>
+                   <a href="/usuarios">Usuarios</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+        <header>
+            <h1>Estatisticas</h1>
+            <p>Desempenho geral dos usuarios.</p>
+        </header>
+
+        <section class="cards">
+
+    <div class="card">
+        <h3>Total de Acertos</h3>
+        <span>{{ estatisticas.acertos }}</span>
+    </div>
+
+    <div class="card">
+        <h3>Total de Erros</h3>
+        <span>{{ estatisticas.erros }}</span>
+    </div>
+
+    <div class="card">
+        <h3>Tempo Medio</h3>
+        <span>{{ estatisticas.tempo }}s</span>
+    </div>
+
+</section>
+
+        <footer>
+            Sistema desenvolvido para projeto academico
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

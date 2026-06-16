@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-container">
+
+<div class="logo">
+    <h2>Questoes Certas</h2>
+    <p>Banco de Concursos</p>
+</div>
+
+    <form>
+
+        <input type="text" placeholder="Nome Completo">
+
+        <input type="email" placeholder="Email">
+
+        <input type="date">
+
+        <select>
+            <option>Area de Interesse</option>
+            <option>Fiscal</option>
+            <option>Policial</option>
+            <option>Administrativa</option>
+            <option>Educacao</option>
+        </select>
+
+        <input type="password" placeholder="Senha">
+
+        <button type="submit">
+            Cadastrar
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

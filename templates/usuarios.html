@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Questoes Certas</h2>
+            <p>Banco de Concursos</p>
+        </div>
+
+        <nav>
+            <ul>
+
+              <li>
+    <a href="/">Dashboard</a>
+</li>
+
+<li>
+    <a href="/questoes">Questoes</a>
+</li>
+
+<li>
+    <a href="/simulado">Simulados</a>
+</li>
+
+<li>
+    <a href="/estatisticas">Estatisticas</a>
+</li>
+
+<li class="active">
+    <a href="/usuarios">Usuarios</a>
+</li>
+
+            </ul>
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+        <header>
+            <h1>Usuarios</h1>
+            <p>Usuarios cadastrados no sistema.</p>
+        </header>
+
+       <table>
+
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Area</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+{% for usuario in usuarios %}
+
+<tr>
+    <td>{{ usuario.nome_completo }}</td>
+    <td>{{ usuario.email }}</td>
+    <td>{{ usuario.area_interesse }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+                <footer>
+            Sistema desenvolvido para projeto academico
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

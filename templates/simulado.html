@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulados</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Questoes Certas</h2>
+            <p>Banco de Concursos</p>
+        </div>
+
+        <nav>
+            <ul>
+
+                <li>
+                   <a href="/">Dashboard</a>
+                </li>
+
+                <li>
+                   <a href="/questoes">Questoes</a>
+                </li>
+
+                <li class="active">
+                   <a href="/simulado">Simulados</a>
+                </li>
+
+                <li>
+                   <a href="/estatisticas">Estatisticas</a>
+                </li>
+
+                <li>
+                   <a href="/usuarios">Usuarios</a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+        <header>
+            <h1>Simulados</h1>
+            <p>Escolha um simulado para praticar.</p>
+        </header>
+
+       <section class="simulados-container">
+
+    {% for simulado in simulados %}
+
+    <div class="simulado-card">
+
+    <h3>{{ simulado.titulo }}</h3>
+
+    <p>Tema: {{ simulado.tema }}</p>
+
+    <button>
+        Abrir Simulado
+    </button>
+
+</div>
+
+    {% endfor %}
+
+</section>
+
+        <footer>
+            Sistema desenvolvido para projeto academico
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

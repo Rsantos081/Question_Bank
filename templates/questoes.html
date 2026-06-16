@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Questões</title>
+
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <aside class="sidebar">
+<div class="logo">
+    <h2>Questoes Certas</h2>
+    <p>Banco de Concursos</p>
+</div>
+<ul>
+
+   <li>
+    <a href="/">Dashboard</a>
+</li>
+
+<li class="active">
+    <a href="/questoes">Questoes</a>
+</li>
+
+<li>
+    <a href="/simulado">Simulados</a>
+</li>
+
+<li>
+    <a href="/estatisticas">Estatisticas</a>
+</li>
+
+<li>
+    <a href="/usuarios">Usuarios</a>
+</li>
+    
+
+</ul>
+    </aside>
+
+    <main class="content">
+
+        <header>
+            <h1>Banco de Questões</h1>
+            <p>Pesquise e filtre questões por disciplina, banca e dificuldade.</p>
+        </header>
+
+        <section class="filtros">
+
+            <select>
+                <option>Disciplina</option>
+                <option>Português</option>
+                <option>Matemática</option>
+                <option>Informática</option>
+            </select>
+
+            <select>
+                <option>Banca</option>
+                <option>CESPE</option>
+                <option>FCC</option>
+            </select>
+
+            <select>
+                <option>Dificuldade</option>
+                <option>Fácil</option>
+                <option>Médio</option>
+                <option>Difícil</option>
+            </select>
+
+            <button>Pesquisar</button>
+
+        </section>
+
+       <section class="questoes">
+
+    {% for questao in questoes %}
+
+    <div class="questao-card">
+
+    <h3>Questao {{ questao.id_questao }}</h3>
+
+    <p>{{ questao.enunciado }}</p>
+
+    <div class="tags">
+        <span>{{ questao.nivel_dificuldade }}</span>
+    </div>
+
+    <a href="/questao/{{ questao.id_questao }}">
+        <button>
+            Resolver Questao
+        </button>
+    </a>
+
+</div>
+
+    {% endfor %}
+
+</section>
+
+<footer>
+    Sistema desenvolvido para projeto academico
+</footer>
+    </main>
+
+</body>
+</html>

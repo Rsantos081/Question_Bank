@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questoes Certas</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<aside class="sidebar">
+
+<div class="logo">
+    <h2>Questoes Certas</h2>
+    <p>Banco de Concursos</p>
+</div>
+
+    <nav>
+        <ul>
+
+            <li class="active">
+               <a href="/">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="/questoes">Questoes</a>
+            </li>
+
+            <li>
+               <a href="/simulado">Simulados</a>
+            </li>
+
+            <li>
+               <a href="/estatisticas">Estatisticas</a>
+            </li>
+
+            <li>
+               <a href="/usuarios">Usuarios</a>
+            </li>
+
+        </ul>
+    </nav>
+
+</aside>
+
+    <main class="content">
+
+        <header>
+            <h1>Dashboard</h1>
+            <p>Bem-vindo ao sistema de banco de questões.</p>
+        </header>
+
+       <section class="cards">
+
+    <div class="card">
+        <h3>Questoes</h3>
+        <span>{{ total_questoes.total }}</span>
+    </div>
+
+    <div class="card">
+        <h3>Disciplinas</h3>
+        <span>{{ total_disciplinas.total }}</span>
+    </div>
+
+    <div class="card">
+        <h3>Usuarios</h3>
+        <span>{{ total_usuarios.total }}</span>
+    </div>
+
+    <div class="card">
+        <h3>Simulados</h3>
+        <span>{{ total_simulados.total }}</span>
+    </div>
+
+</section>
+
+        <section class="recent">
+
+            <h2>Últimos Simulados</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Tema</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Receita Federal</td>
+                        <td>Língua Portuguesa</td>
+                    </tr>
+
+                    <tr>
+                        <td>TRF</td>
+                        <td>Direito Constitucional</td>
+                    </tr>
+
+                    <tr>
+                        <td>TCU</td>
+                        <td>Direito Administrativo</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+        <footer>
+    Sistema desenvolvido para projeto academico
+</footer>
+
+    </main>
+
+</body>
+</html>
