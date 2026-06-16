@@ -12,8 +12,6 @@ conexao = mysql.connector.connect(
     database="questoes_certas"
 )
 
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
@@ -41,18 +39,12 @@ def login():
 
     return render_template("login.html")
 
-
-
-
 @app.route("/logout")
 def logout():
 
     session.clear()
 
     return redirect("/login")
-
-
-
 
 @app.route("/")
 def index():
@@ -79,9 +71,6 @@ def index():
         total_disciplinas=total_disciplinas
     )
 
-
-
-
 @app.route("/usuarios")
 def usuarios():
 
@@ -101,9 +90,6 @@ def usuarios():
         "usuarios.html",
         usuarios=usuarios
     )
-
-
-
 
 @app.route("/questoes")
 def questoes():
@@ -127,9 +113,6 @@ def questoes():
         questoes=questoes
     )
 
-
-
-
 @app.route("/questao/<int:id>")
 def questao(id):
 
@@ -147,9 +130,6 @@ def questao(id):
         "resolver_questao.html",
         questao=questao
     )
-
-
-
 
 @app.route("/simulado")
 def simulados():
@@ -170,9 +150,6 @@ def simulados():
         simulados=simulados
     )
 
-
-
-
 @app.route("/estatisticas")
 def estatisticas():
 
@@ -192,7 +169,6 @@ def estatisticas():
         "estatisticas.html",
         estatisticas=estatisticas
     )
-
 
 if __name__ == "__main__":
     app.run(debug=True)
